@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="js/fontawesome.js">
+    <link rel="stylesheet" href="js/fontawesome.min.js">
+    <link rel="shortcut icon" href="img/logo2.png">
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+         }
+
+        body{
+          font-size: 20px;
+          font-family: 'Work Sans', sans-serif;
+          background-color: rgb(250, 230, 187);
+          overflow-x: hidden;
+        }
+
+        #menu-principal{
+            background-color: rgb(250, 230, 187);
+            width: 100%;
+            height: 100%;
+            margin-bottom: 30px;
+        }
+        #menu{
+            background-color:rgb(250, 230, 187);
+            margin-bottom: 0px ;
+            width: 100%;
+            height: 100%;
+        }
+        #boton-rayas{
+          background-color: darkgray;
+        }
+        #boton{
+          background-color: darkgray;
+        }
+        #menu-titulo{
+          color: #000;
+          font-size: 25px;
+        }
+        #menu-home{
+          color: #000;
+          
+        }
+        #menu-acerca{
+          color: #000;
+          
+        }
+        #menu-productos{
+          color: #000;
+          
+        }
+        #menu-productos{
+          color: #000;
+          
+        }
+        #menu-contactenos{
+          color: #000;
+          
+        }
+        #menu ul li{
+          text-align: center;
+          color: white;
+        }
+        #detalle{
+            text-align: center;
+            background-color: bisque;
+        }
+        #desc{
+            font-size: medium;
+        }
+        #datos{
+            margin-bottom: 40px;
+        }
+        footer{
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgb(21, 18, 39);
+            height: auto;
+            width: 100vw;
+            font-family: 'Work Sans', sans-serif;
+            padding-top: 40px;
+            color: white;
+          }
+          .footer-content{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              flex-direction: column;
+              text-align: center;
+          }
+          .footer-content h3{
+              font-size: 1.8rem;
+              font-weight: 400;
+              text-transform: capitalize;
+              line-height: 3rem;
+          }
+          .footer-content p{
+              max-width: 500px;
+              margin: 10px auto;
+              line-height: 28px;
+              font-size: 14px;
+          }
+          .socials{
+              list-style: none;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 1rem 0 3rem 0;
+          }
+          .socials a i{
+              font-size: 1.1rem;
+              transition: color .4s ease;
+          }
+          .socials a:hover i{
+              color: aqua;
+          }
+          .footer-bottom{
+              background: #000;
+              width: 100vw;
+              padding: 20px 0;
+              text-align: center;
+          }
+          .footer-bottom p{
+              font-size: 14px;
+              word-spacing: 2px;
+              text-transform: capitalize;
+          }
+          .footer-bottom span{
+              text-transform: uppercase;
+              opacity: .4;
+              font-weight: 200;
+          }
+          #miCuenta {
+      color: #000;
+
+          }
+          #div-dolar {
+        font-size: 10pt;
+        position: relative;
+        left: -10px;
+        text-align: inherit;
+
+            }
+     </style>
+  </head>
+  
+  <body>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+      $.getJSON('https://mindicador.cl/api', function (data) {
+        var dailyIndicators = data;
+        $("#dolar").text(dailyIndicators.dolar.valor + "CLP");
+      }).fail(function () {
+        console.log('Error al consumir la API!');
+      });
+    </script>
+
+    <div class="container" id="menu-principal">
+      <nav class="navbar navbar-expand-lg nevbar-ligth bg-ligth">
+        <a id="menu-titulo" class="navbar-brand text white">
+          Cake home
+          <img src="img/logo.png" width="30 px" height="30px">
+        </a>
+        <button id="boton-rayas" class="navbar-toggler" data-target="#menu" data-toggle="collapse" type="button">
+          <span id="boton" class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a id="menu-home" href="home.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a id="menu-acerca" href="acerca de.html" class="nav-link">Acerca de la pasteleria</a>
+            </li>
+            <li class="nav-item active">
+              <a id="menu-productos" href="home.html#productos" class="nav-link">Productos</a>
+            </li>
+            <li class="nav-item active">
+              <a id="menu-contactenos" href="#footer" class="nav-link">Contactenos</a>
+            </li>
+            <li class="nav-item active">
+              <a  id="miCuenta" href="login.html" class="nav-link" >Mi cuenta</a>
+            </li>   
+          </ul>
+
+        </div>
+        <div id="div-dolar">
+          <img src="img/dolar.png" alt="" width="30px">
+          USD:
+          <p id="dolar"></p>
+        </div>
+      </nav>
+
+    </div> <!--fin menu principal-->
+    <div class="container">
+        <div id="detalle">
+            <h5>Detalle:</h5>
+            <img src="img/personalizado.jpg" alt="" width="40%">
+            <br>
+            <br>
+            <h2>Pastel de cumpleaños perzonalisable</h2>
+            <p id="desc">Descripción: Pastel de sabores a eleccion con texto perzonalisable,
+                idealmente para cumpleaños o festividades.
+            </p>
+            <br>
+            <h6>$20.000</h6>
+        </div>
+    </div><!--fin Detalle producto-->
+    <div class="container">
+      <div id="datos">
+        <h2>Complemente sus datos</h2>
+        <form action="" method="POST" id="finalizarPedido">
+          <div class="row">
+          </div>
+          <div>
+            Direccion
+            <br>
+            <input class="form-control" type="text" id="direc" placeholder="Ej: Suecia #456" size="60" >
+          </div>
+  
+          <script language="javascript" type="text/javascript">
+  
+            function Solo_Numerico(variable) {
+              Numer = parseInt(variable);
+              if (isNaN(Numer)) {
+                return "";
+              }
+              return Numer;
+            }
+            function ValNumero(Control) {
+              Control.value = Solo_Numerico(Control.value);
+            }
+          </script>
+          <div>Teléfono</div>
+          <input class="form-control" type=text name=Telefono id="tel" onkeyUp="return ValNumero(this);" maxlength="8"
+            size="60" placeholder="68437465 (omita el 9)"  />
+          <div>Región y comuna</div>
+          <select class="dropdown" id="regiones" required></select>
+          <select id="comunas" required></select>
+          <br>
+          <br>
+          <input class="btn btn-primary btn-lg" type="reset" value="Reiniciar formulario">
+          <br>
+          <br>
+          <script src="js/validarPedido.js"></script>
+          <input class="btn btn-primary btn-lg" type="submit" value="Finalizar pedido">
+          <div id="siFinalizado" class="alert alert-success alert-dismissible fade show" role="alert">Su pedido ha sido
+            registrado
+            enviamos a su correo los detalles.</div>
+          <div id="noFinalizado" class="alert alert-danger" role="alert">Complete los datos</div>
+        </form>
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="footer-content">
+        <h3>Visitanos en nuestras redes sociales</h3>
+        <ul class="socials">
+          <li><a href="https://www.facebook.com/campaign/landing.php?campaign_id=1742494936&extra_1=s%7Cc%7C339385163690%7Ce%7Cfacebook%20%27%7C&placement=&creative=339385163690&keyword=facebook%20%27&partner_id=googlesem&extra_2=campaignid%3D1742494936%26adgroupid%3D65025591501%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-360705453827%26loc_physical_ms%3D20160%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gclid=CjwKCAjw-e2EBhAhEiwAJI5jg0jrDwJw5FXfEhMvfLra9I69rrhXFuSSMxyPLrQyg4I-VcZLpGaumhoCc0wQAvD_BwE"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://twitter.com/?lang=es"><i class="fa fa-twitter"></i></a></li>
+          <li><a href="https://web.whatsapp.com"><i class="fa fa-whatsapp"></i></a></li>
+          <li><a href="https://www.youtube.com"><i class="fa fa-youtube"></i></a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        <p>copyrigth &copy;2021 CakeHome Todos los derechos reservados</p>
+      </div>
+    </footer>
+        
+  
+      <!-- Optional JavaScript; choose one of the two! -->
+  
+      <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+      <script src="js/comunaregion.js"></script>
+      <script src="js/all.js"></script>
+      <script src="js/v4-shims.js"></script>
+      <script src="js/fontawesome.js"></script>
+      <script src="js/jquery-3.6.0.min.js"></script>
+      <script>
+        $(document).ready(function () {
+    $("#siFinalizado").hide();
+    $("#noFinalizado").hide();
+    $("#finalizarPedido").submit(function (e) {
+      e.preventDefault();
+      direccion = $.trim($("#direc").val());
+      telefono = $.trim($("#tel").val());
+      if (direccion.length > 0 && telefono.length > 0) {
+        $("#siFinalizado").fadeTo(2000, 500).slideUp(500, function () {
+          $("#siFinalizado").slideUp(500);
+          setTimeout(function () { window.location.href = "home.html"; }, 500);
+        });
+      } else {
+        $("#noFinalizado").fadeTo(2000, 500).slideUp(500, function () {
+          $("#noFinalizado").slideUp(500);
+        });
+      }
+    }
+    )
+  });
+      </script>
+      <!-- Option 2: Separate Popper and Bootstrap JS -->
+      <!--
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+      -->
+    </body>
+  </html>
