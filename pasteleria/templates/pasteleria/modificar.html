@@ -1,0 +1,26 @@
+{% if producto %}
+   
+    <form action="{% url 'pasteleria:modificar_producto' producto.id %}" method="POST">
+        
+        {% csrf_token %}
+        Nombre producto <input type="text" name="producto" value="{{ producto.producto }}">
+        <br>
+        <br>
+        Precio <input type="number" name="precio" value="{{ producto.precio }}" >
+        <br>
+        <br>
+        Descripción <input  size="50" name="mensaje" type="text" placeholder="Descripción" value="{{ producto.mensaje }}"  >
+        <br>
+        <br>
+        Sabor <input type="text" name="sabor" value="{{ producto.sabor }}" >
+        <br>
+        <br>
+        Cantidad <input type="number" name="cantidad" value="{{ producto.cantidad }}" >
+        <br>
+        <br>
+        <input type="submit" value="Guardar producto">
+    </form>
+   
+{% else %}
+    <p>No se han encontrado productos</p>
+{% endif %}

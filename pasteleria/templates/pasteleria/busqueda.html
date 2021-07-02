@@ -1,0 +1,9 @@
+{% if listado %}
+    <ul>
+    {% for p in listado %}
+        <li>{{ p.producto }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No se encontro el productos seleccionado</p>
+{% endif %}

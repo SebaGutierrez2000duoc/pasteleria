@@ -1,0 +1,5 @@
+<form action="{% url 'pasteleria:buscar_producto' %}" method="POST">
+    {% csrf_token %}
+    Nombre producto<input type="text" name="producto">
+    <input type="submit" value="Buscar">
+</form>

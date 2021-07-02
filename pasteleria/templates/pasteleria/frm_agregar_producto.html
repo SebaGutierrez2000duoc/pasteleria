@@ -1,0 +1,22 @@
+<form action="{% url 'pasteleria:registrar_producto' %}" method="POST">
+    {% csrf_token %}
+    Nombre producto <input type="text" name="producto">
+    <br>
+    <br>
+    Precio <input type="number" name="precio" >
+    <br>
+    <br>
+    <textarea  name="mensaje" placeholder="Descripción"></textarea>
+    <br>
+    <br>
+    Sabor <input type="text" name="sabor" >
+    <br>
+    <br>
+    Cantidad <input type="number" name="cantidad" >
+    <br>
+    <br>
+    <input type="submit" value="Guardar producto">
+</form>
+    <a href="{% url 'pasteleria:index' %}">
+    <input type="submit" value="Volver a index">
+    </a>
