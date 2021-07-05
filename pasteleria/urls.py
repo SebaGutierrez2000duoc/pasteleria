@@ -12,5 +12,6 @@ urlpatterns = [
     path('modificar/<id>', views.modificar, name="modificar"),
     path('modificar_producto/<id>', views.modificar_producto, name="modificar_producto"),
     path('registro', views.frm_registrar, name='frm_registrar'),
-    path('iniciar_sesion', views.login, name='iniciar_sesion'),
+    path('iniciar_sesion', views.iniciar_sesion, name='iniciar_sesion'),
+    path('home', views.home, name='home'),
 ]

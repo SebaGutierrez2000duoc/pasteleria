@@ -1,14 +1,29 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 {% load static %}
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    {% load static %}
     <a href='{% static "pasteleria/css/estilos.css"%}' id="menu-titulo" class="navbar-brand text white">
         Cake home
         <img src='{% static "pasteleria/img/logo.png" %}' width="30 px" height="30px">
-      </a>
-  </nav>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li id="incio" class="nav-item active">
+                <a href='{% static "pasteleria/css/estilos.css"%}' id="menu-home" class="nav-link">Inicio</a>
+            </li>
+            <li  class="nav-item active">
+                <a href="" id="menu-productos" class="nav-link">Productos</a>
+            </li>  
+            <li class="nav-item active">
+                <a href="" id="miCuenta" class="nav-link">Mi cuenta</a>
+            </li>  
+        </ul>
+    </div>
+</nav>
 {% if listado %}
 
     <div class="container">
+        <br><br>
         <h3>Lista de productos</h3>
         <hr>
         <ul class="list-group">

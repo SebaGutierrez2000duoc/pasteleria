@@ -81,6 +81,8 @@ def modificar(request, id):
     # mensaje_producto = lista.mensaje
     # sabor_prodcuto = lista.sabor
     # cantidad_producto = lista.cantidad
+def home(request):
+    return render(request, 'pasteleria/home.html')
 
     
     

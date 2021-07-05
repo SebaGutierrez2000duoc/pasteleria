@@ -13,27 +13,16 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from misitio.views import ProductoViewSet
 from django.contrib import admin
 from django.urls import include, path
 from django.contrib.auth.models import User
-from rest_framework import routers, serializers, viewsets
-from pasteleria.models import Producto
+from rest_framework import routers
 
-# Serializers define the API representation.
-class ProductoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Producto
-        fields = ['producto', 'precio', 'descripcion']
-
-# ViewSets define the view behavior.
-class ProductoViewSet(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
-    serializer_class = ProductoSerializer
 
 # Routers provide an easy way of automatically determining the URL conf.
 router = routers.DefaultRouter()
 router.register(r'Productos', ProductoViewSet)
-
 
 
 urlpatterns = [

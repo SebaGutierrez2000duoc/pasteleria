@@ -1,0 +1,29 @@
+#carousel1 {
+    margin-bottom: 20px;
+  }
+
+#Carrusel {
+    color: black;
+    position: absolute;
+    top: 15px;
+}
+
+#productos {
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 60px;
+    
+    
+    font-family: 'Work Sans', sans-serif;
+}
+#pagina {
+    text-align: center;
+    
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 20px;
+    
+  }
+
+#imagen {
+    text-align: start;
+  }

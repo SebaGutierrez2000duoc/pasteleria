@@ -38,22 +38,17 @@ body {
 }
 
 #menu-home {
-    color: #000;
-
-}
-
-#menu-acerca {
-    color: #000;
+    color: aliceblue;
 
 }
 
 #menu-productos {
-    color: #000;
+    color: aliceblue;
 
 }
 
-#menu-productos {
-    color: #000;
+#miCuenta {
+    color: aliceblue;
 
 }
 
@@ -216,14 +211,4 @@ footer {
     opacity: .4;
     font-weight: 200;
 }
-#miCuenta {
-color: #000;
 
-  }
-  #div-dolar {
-font-size: 10pt;
-position: relative;
-left: -10px;
-text-align: inherit;
-
-    }
