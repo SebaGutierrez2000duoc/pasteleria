@@ -1,0 +1,171 @@
+body {
+    font-size: 20px;
+    font-family: 'Work Sans', sans-serif;
+    background-color: rgb(250, 230, 187);
+    overflow-x: hidden;
+}
+
+#menu-principal {
+    background-color: rgb(250, 230, 187);
+}
+
+#menu {
+    background-color: rgb(250, 230, 187);
+    margin-bottom: 0px;
+}
+
+#boton-rayas {
+    background-color: darkgray;
+}
+
+#boton {
+    background-color: darkgray;
+}
+
+#menu-titulo {
+    color: aliceblue;
+    font-size: 25px;
+}
+
+#menu-home {
+    color: #000;
+
+}
+
+#menu-acerca {
+    color: #000;
+
+}
+
+#menu-productos {
+    color: #000;
+
+}
+
+#menu-productos {
+    color: #000;
+
+}
+
+#menu-contactenos {
+    color: #000;
+
+}
+
+#menu ul li {
+    text-align: center;
+    color: white;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    background-color: darkslateblue;
+    background-size: cover;
+    background-position: center;
+    background-image: url(img/pastel.jpg);
+}
+
+#miCuenta {
+color: #000;
+
+}
+
+.banner-content {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    color: floralwhite;
+    background-color: rgba(0, 22, 40, .8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cuenta-crear {
+    color: #fff;
+}
+
+footer {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(21, 18, 39);
+    height: auto;
+    width: 100vw;
+    font-family: 'Work Sans', sans-serif;
+    padding-top: 40px;
+    color: white;
+    margin-right: 10;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.footer-content h3 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    margin-right: 10px;
+}
+
+.footer-content p {
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+.socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.socials a i {
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+
+.socials a:hover i {
+    color: aqua;
+}
+
+.footer-bottom {
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+ }
+
+.footer-bottom span {
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
+#div-dolar {
+font-size: 10pt;
+position: relative;
+left: -10px;
+text-align: inherit;
+
+    }

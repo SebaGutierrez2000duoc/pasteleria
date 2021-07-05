@@ -13,17 +13,22 @@ def index(request):
 
 def frm_agregar_producto(request):
     return render(request, 'pasteleria/frm_agregar_producto.html')
+def frm_registrar(request):
+    return render(request, 'pasteleria/registrarse.html')
+
+def iniciar_sesion(request):
+    return render(request, 'pasteleria/iniciar sesion.html')
 
 def registrar_producto(request):
     producto = request.POST['producto'].strip()
     precio = request.POST['precio'].strip()
-    mensaje = request.POST['mensaje']
+    descripcion = request.POST['mensaje']
     sabor = request.POST['sabor'].strip()
     cantidad = request.POST['cantidad'].strip()
     if producto == "" or precio == "" or sabor == "" or cantidad == "":
         return HttpResponse("Debe ingresar los campos solicitados")
     else:
-        guardar = Producto(producto=producto, precio=precio, mensaje=mensaje, sabor=sabor, cantidad=cantidad)
+        guardar = Producto(producto=producto, precio=precio, descripcion=descripcion, sabor=sabor, cantidad=cantidad)
         guardar.save()
         return HttpResponseRedirect(reverse('pasteleria:index'))
 

@@ -1,9 +1,27 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% load static %}
+<nav class="navbar navbar-dark bg-dark">
+    <a href='{% static "pasteleria/css/estilos.css"%}' id="menu-titulo" class="navbar-brand text white">
+        Cake home
+        <img src='{% static "pasteleria/img/logo.png" %}' width="30 px" height="30px">
+      </a>
+  </nav>
 {% if listado %}
-    <ul>
-    {% for p in listado %}
-        <li>{{ p.producto }}</li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No se encontro el productos seleccionado</p>
-{% endif %}
+
+    <div class="container">
+        <h3>Lista de productos</h3>
+        <hr>
+        <ul class="list-group">
+            {% for p in listado %}
+                <li class="list-group-item">{{ p.producto }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+        <div class="container">
+            <div class="alert alert-warning">
+                <h4>No se encontro el productos seleccionado</h4>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    

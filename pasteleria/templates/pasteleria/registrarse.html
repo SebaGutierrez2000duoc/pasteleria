@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com/%22%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Charmonman:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;1,200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <link rel="stylesheet" href="js/fontawesome.js">
+    <link rel="stylesheet" href="js/fontawesome.min.js">
+    <link rel="shortcut icon" href="img/logo2.png">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href='{% static "pasteleria/css/registro.css" %}'>
+</head>
+<body>
+    <link rel="stylesheet" href='{% static "pasteleria/css/registro.css" %}'>
+    <nav class="navbar navbar-dark bg-dark">
+        <a href='{% static "pasteleria/css/estilos.css"%}' id="menu-titulo" class="navbar-brand text white">
+            Cake home
+            <img src='{% static "pasteleria/img/logo.png" %}' width="30 px" height="30px">
+          </a>
+      </nav>
+      <!--fin menu principal-->
+      <div class="banner">
+        <div class="banner-content">
+            <div class="container" id="registro-formulario">
+            <form  id="formulario2">
+                <div class="form-register">
+                    <h4>Formulario Registro</h4>
+                    <hr>
+                    <div>
+                    <label for="exampleInput">Nombre</label>   
+                    <input class="form-control" type="text" id="nom" name="nombre"  placeholder="Ej:Juan">
+                </div>
+                <div>
+                    <label for="exampleInputLastName">Apellido Paterno</label>
+                    <input class="form-control" type="text" id="apellidop" name="apellido-p"
+                        placeholder="Ej:Martinez">
+                    </div>
+                    <div>
+                        <label for="exampleInputLastName">Apellido Materno</label>
+                        <input class="form-control" type="text" id="apellidom" name="apellido-m"
+                            placeholder="Ej:Lara">
+                        </div>
+                    <div>
+                    <label for="exampleInputRun">Rut (Formato : Sin puntos con Guión Ejemplo: 12345678-9 )</label>    
+                    <input class="form-control" type="text" id="rut" name="run-identificador"  placeholder="Ej:12345678-9"
+                        oninput="checkRut(this)">
+                    </div>
+                    <div>
+                    <label for="exampleInputCorreo">Correo electronico</label>    
+                    <input class="form-control" type="email" id="corr" name="correoElec"  placeholder="Ej:usuario@correo.com">
+                </div>
+                <div>
+                    <label for="exampleInputPassword2">Contraseña</label>
+                    <input class="form-control" type="password" id="clav" name="claveSecreta" 
+                        placeholder="Ej:contraseñasecreta">
+                    </div>
+                    <br>
+                    <script src='{% static "pasteleria/js/jquery-3.6.0.min.js" %}'></script>
+                    <script src='{% static "pasteleria/js/validarRegistros.js"%}'></script>
+                    <a href="{% url 'pasteleria:iniciar_sesion' %}">
+                        <button type="submit" class="btn btn-lg btn-primary btn-block"
+                            onclick="validarRegistros()">Registrar</button>
+                    </a>
+                    <div id="siRegistrado" class="alert alert-success alert-dismissible fade show" role="alert">Cuenta
+                        registrada con éxito!</div>
+                    <div id="noRegistrado" class="alert alert-danger" role="alert">Complete los datos</div>
+                    <br>
+                    <input class="btn btn-primary btn-lg btn-block" type="reset" value="Vaciar campos">
+                </div>
+            </form>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>

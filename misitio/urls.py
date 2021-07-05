@@ -15,8 +15,33 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+from pasteleria.models import Producto
+
+# Serializers define the API representation.
+class ProductoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Producto
+        fields = ['producto', 'precio', 'descripcion']
+
+# ViewSets define the view behavior.
+class ProductoViewSet(viewsets.ModelViewSet):
+    queryset = Producto.objects.all()
+    serializer_class = ProductoSerializer
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'Productos', ProductoViewSet)
+
+
 
 urlpatterns = [
+    path('api', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('pasteleria/', include('pasteleria.urls')),
     path('admin/', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
+
 ]
+
