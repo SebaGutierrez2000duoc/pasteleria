@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li id="incio" class="nav-item active">
-                <a href='{% static "pasteleria/css/estilos.css"%}' id="menu-home" class="nav-link">Inicio</a>
+                <a href='{%  static "pasteleria/css/estilos.css"%} ' id="menu-home" class="nav-link">Inicio</a>
             </li>
             <li  class="nav-item active">
-                <a href="" id="menu-productos" class="nav-link">Productos</a>
+                <a href="{ % url 'pasteleria:productos' % }" id="menu-productos" class="nav-link">Productos</a>
             </li>  
             <li class="nav-item active">
                 <a href="" id="miCuenta" class="nav-link">Mi cuenta</a>

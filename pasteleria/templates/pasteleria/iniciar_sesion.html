@@ -32,13 +32,14 @@
             <ul class="navbar-nav mr-auto">
                 <li id="incio" class="nav-item active">
                     {% load static %}
-                    <a href='{% static "pasteleria/css/login.css"%}' id="menu-home" class="nav-link">Inicio</a>
+                    
+                    <a href='http://localhost:8000/pasteleria/' id="menu-home" class="nav-link">Inicio</a>
                 </li>
                 <li  class="nav-item active">
-                    <a href='{% static "pasteleria/css/login.css"%}' id="menu-productos" class="nav-link">Productos</a>
+                    <a href="http://localhost:8000/pasteleria/productos" id="menu-productos" class="nav-link">Productos</a>
                 </li>  
                 <li class="nav-item active">
-                    <a href='{% static "pasteleria/css/login.css"%}' id="miCuenta" class="nav-link">Mi cuenta</a>
+                    <a href='http://localhost:8000/pasteleria/inicio_sesion' id="miCuenta" class="nav-link">Mi cuenta</a>
                 </li>  
             </ul>
         </div>  
@@ -49,29 +50,31 @@
             <div class="container" id="formulario">
                 <h4>Iniciar sesion</h4>
                 <hr>
-                <form id="formulario1">
+                <form action="{% url 'pasteleria:inicio_sesion' %}" id="formulario1" method="POST">
+                    {% csrf_token %}
                     <img src="img/user.png" alt="" width="100">
                     <div class="form-group">
-                        <label for="exampleInput">Rut*</label>
-                        <input type="text" class="form-control" id="rut" name="rut" oninput="checkRut(this)">
-                        <small id="exampleInput" class="form-text text-muted">Ingresa tu rut sin puntos</small>
+                        <label for="exampleInput">Usuario</label>
+                        <input type="text" class="form-control" id="rut" name="rut">
                         <script src="js/validarRut.js"></script>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Contraseña*</label>
-                        <input type="password" class="form-control" id="contraseña">
+                        <input type="password" class="form-control" id="contraseña" name="contraseña">
                     </div>
                     <script src='{% static "pasteleria/js/jquery-3.6.0.min.js" %}'></script>
-                    <script src='{% static "pasteleria/js/validarLogin.js" %}'></script>
-                    <a href="{% url 'pasteleria:index'%}">
-                    <button type="submit" class="btn btn-lg btn-primary btn-block" onclick="validarLogin()">Acceder</button>
-                    </a>
-                    <div id="datosSi" class="alert alert-success alert-dismissible fade show" role="alert">Ingresado
-                        correctamente</div>
-                    <div id="datosNo" class="alert alert-danger" role="alert">Complete los campos</div>
+                    <!-- <script src='{% static "pasteleria/js/validarLogin.js" %}'></script> -->
+                    
+                    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Acceder" />
+                    
+                    <!-- <div id="datosSi" class="alert alert-success alert-dismissible fade show" role="alert">Ingresado
+                        correctamente</div> -->
+                    <!-- <div id="datosNo" class="alert alert-danger" role="alert">Complete los campos</div> -->
 
                     <br>
-                    <input class="btn btn-lg btn-primary btn-block" type="button" onclick="location.href='registro.html';" value="Crear cuenta" />
+                    <a href="{% url 'pasteleria:registro'%}">
+                    <input class="btn btn-lg btn-primary btn-block" type="button" value="Crear cuenta" />
+                    </a>
                     <br>
                     <small>¿Que beneficios tengo con mi cuenta?</small>
                     <br>

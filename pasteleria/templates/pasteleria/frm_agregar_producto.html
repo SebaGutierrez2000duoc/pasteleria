@@ -8,10 +8,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li id="incio" class="nav-item active">
-                <a href="" id="menu-home" class="nav-link">Inicio</a>
+                <a href="http://localhost:8000/pasteleria/" id="menu-home" class="nav-link">Inicio</a>
             </li>
             <li  class="nav-item active">
-                <a href="" id="menu-productos" class="nav-link">Productos</a>
+                <a href="http://localhost:8000/pasteleria/productos" id="menu-productos" class="nav-link">Productos</a>
             </li>  
             <li class="nav-item active">
                 <a href="" id="miCuenta" class="nav-link">Mi cuenta</a>
@@ -56,7 +56,7 @@
     </div>
 </div>
     <div class="container">
-        <a href="{% url 'pasteleria:index' %}">
+        <a href="{ % url 'pasteleria:productos' % }">
         <input class="btn btn-primary" type="submit" value="Volver a index">
         </a>
     </div>

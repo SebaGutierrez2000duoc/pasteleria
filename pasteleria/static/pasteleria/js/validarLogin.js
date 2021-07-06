@@ -8,7 +8,7 @@ $(document).ready(function() {
        if(run.length>0 && pass.length>0){
            $("#datosSi").fadeTo(2000, 500).slideUp(500, function(){
                $("#datosSi").slideUp(500);
-               setTimeout(function(){window.location.href = "{% url 'pasteleria:index'%}"}, 500 );
+               setTimeout(function(){window.location.href = "http://localhost:8000/pasteleria/"}, 500 );
            });
        }else{
            $("#datosNo").fadeTo(2000, 500).slideUp(500, function(){

@@ -12,7 +12,7 @@ $(document).ready(function() {
         if (nombre.length>0 && apellido_p.length>0 && apellido_p.length>0 && run.length>0 && correoelectronico.length>0 && clavea.length>0) {
             $("#siRegistrado").fadeTo(2000, 500).slideUp(500, function() {
                 $("#siRegistrado").slideUp(500);
-                $(setTimeout(function(){window.location.href = "login.html";}, 500));
+                $(setTimeout(function(){window.location.href = "http://localhost:8000/pasteleria/";}, 500));
             });
         } else {
             $("#noRegistrado").fadeTo(2000, 500).slideUp(500, function() {

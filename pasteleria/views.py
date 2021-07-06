@@ -1,23 +1,28 @@
+
+
+import pasteleria
 from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import get_object_or_404, redirect, render
-from pasteleria.models import Producto
+from pasteleria.models import Cliente, Producto
 from django.urls import reverse
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 
 
 
-def index(request):
+def productos(request):
     listado = Producto.objects.all()
     context = {'listado':listado}
     return render(request, 'pasteleria/index.html', context)
+
 
 def frm_agregar_producto(request):
     return render(request, 'pasteleria/frm_agregar_producto.html')
 def frm_registrar(request):
     return render(request, 'pasteleria/registrarse.html')
 
-def iniciar_sesion(request):
-    return render(request, 'pasteleria/iniciar sesion.html')
+
 
 def registrar_producto(request):
     producto = request.POST['producto'].strip()
@@ -30,7 +35,7 @@ def registrar_producto(request):
     else:
         guardar = Producto(producto=producto, precio=precio, descripcion=descripcion, sabor=sabor, cantidad=cantidad)
         guardar.save()
-        return HttpResponseRedirect(reverse('pasteleria:index'))
+        return HttpResponseRedirect(reverse('pasteleria:productos'))
 
 def modificar_producto(request, id):
     uProducto = Producto.objects.get(id=id)
@@ -43,7 +48,7 @@ def modificar_producto(request, id):
         return HttpResponse("Debe ingresar los campos solicitados")
     else:
         uProducto.save()
-        return HttpResponseRedirect(reverse('pasteleria:index'))   
+        return HttpResponseRedirect(reverse('pasteleria:productos'))   
 
 def frm_buscar_producto(request):
     return render(request, 'pasteleria/frm_buscar_producto.html')
@@ -58,33 +63,38 @@ def buscar_producto(request):
 def eliminar(request, id):
     id = Producto.objects.get(id=id)
     id.delete()
-    return HttpResponseRedirect(reverse('pasteleria:index'))
+    return HttpResponseRedirect(reverse('pasteleria:productos'))
 
-# def modificar(request,id):
-#     id = Producto.objects.get(id=id)
-#     listado = Producto.objects.all()
-#     listado = {'listado':listado,'producto':id.producto, 'precio':id.precio, 'mensaje':id.mensaje,
-#     'sabor':id.sabor, 'cantidad':id.cantidad}
-#     return render(request, 'pasteleria/modificar.html', listado)
 
 def modificar(request, id):
     producto = None
     lista = Producto.objects.get(id=id)
     producto = lista
-    # if len(lista) > 0:
-        
-    # else:
-    #     producto = None
+
     return render(request, 'pasteleria/modificar.html',{'producto':producto}) 
-    # nombre_producto = lista.producto
-    # precio_producto = lista.precio
-    # mensaje_producto = lista.mensaje
-    # sabor_prodcuto = lista.sabor
-    # cantidad_producto = lista.cantidad
+
 def home(request):
     return render(request, 'pasteleria/home.html')
 
+def Isesion(request):
+    return render(request, 'pasteleria/iniciar_sesion.html')
+
+def frm_registro(request):
+    return render(request, 'pasteleria/registrarse.html')
+
+
+
+
+def iniciar_sesion(request):
+    usuario = request.POST['rut']
+    clave = request.POST['contraseña']
+    user = authenticate(request, username=usuario, password=clave)
     
+    if user is not None:
+        login(request, user)
+        return render(request, 'pasteleria/home.html')
+    else:
+        return render(request, 'pasteleria/iniciar_sesion.html')
     
     
     
